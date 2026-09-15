@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mohammed Rahim — Python Developer</title>
+<meta name="description" content="Mohammed Rahim — Python Developer, Data Analyst and aspiring Data Scientist.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root{
+ --bg:#02070c; --fg:#f7fbff; --muted:#9daab7; --line:rgba(255,255,255,.11);
+ --cyan:#00e7ff; --orange:#ff9f1c; --purple:#8b5cf6;
+ --mx:50%; --my:50%; --scroll:0;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.18;
+ background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px);mix-blend-mode:screen}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:91;
+ box-shadow:inset 0 0 180px #000}
+a{color:inherit;text-decoration:none}.container{width:min(1180px,88vw);margin:auto}
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);z-index:120;
+ background:linear-gradient(90deg,var(--cyan),var(--orange),var(--purple));box-shadow:0 0 20px var(--cyan)}
+.nav{position:fixed;z-index:100;top:0;left:0;right:0;height:78px;display:flex;align-items:center;
+ background:linear-gradient(#020509d9,transparent);backdrop-filter:blur(8px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}.logo{font:700 27px "Space Grotesk";letter-spacing:-.08em}
+.logo span{color:var(--orange)}.links{display:flex;gap:34px;align-items:center}
+.links a{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#b9c2cd;transition:.3s}
+.links a:hover,.links a.active{color:white}.links a.active:after{content:"";display:block;width:100%;height:2px;margin-top:8px;background:var(--orange);box-shadow:0 0 12px var(--orange)}
+.cv{border:1px solid #7d6b45;padding:10px 16px;border-radius:999px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.hero,.section{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero{background:#02070c}.section{padding:110px 0}
+.bg-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.55;transition:background 1.2s,transform .8s}
+.orb1{width:520px;height:520px;left:-180px;top:4%;background:rgba(0,220,255,.18)}
+.orb2{width:500px;height:500px;right:-180px;top:12%;background:rgba(255,132,0,.17)}
+.orb3{width:420px;height:420px;left:35%;bottom:-240px;background:rgba(89,72,255,.13)}
+.grid-bg{position:absolute;inset:0;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+.hero-content{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.kicker{color:var(--cyan);font-size:12px;letter-spacing:.35em;font-weight:600}
+h1{font:600 clamp(58px,7.4vw,105px)/.82 "Space Grotesk";letter-spacing:-.075em;margin:24px 0}
+h1 .orange{color:var(--orange)}.role{font:500 24px "Space Grotesk";margin-bottom:22px}
+.lead{color:#aab5c0;max-width:570px;line-height:1.8;font-size:14px}
+.contact-mini{display:flex;gap:18px;flex-wrap:wrap;margin:26px 0;color:#9eabb7;font-size:11px}
+.actions{display:flex;gap:12px;margin-top:30px}.btn{padding:14px 21px;border-radius:999px;border:1px solid var(--line);font-size:11px;letter-spacing:.11em;text-transform:uppercase;transition:.35s}
+.btn.primary{background:linear-gradient(100deg,#ff9f1c,#ffc15a);color:#071016;border:0;box-shadow:0 0 35px rgba(255,159,28,.2)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 15px 40px #0008}
+.hero-photo{position:relative;height:min(690px,78vh);display:flex;justify-content:center;align-items:flex-end}
+.photo-halo{position:absolute;width:min(620px,48vw);aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle at 42% 45%,rgba(0,225,255,.42),transparent 43%),radial-gradient(circle at 70% 65%,rgba(255,137,0,.35),transparent 45%);
+ filter:blur(2px);box-shadow:0 0 100px rgba(0,220,255,.15);animation:pulse 5s ease-in-out infinite}
+.photo-frame{position:relative;height:100%;width:100%;display:flex;align-items:flex-end;justify-content:center}
+.photo-frame:before{content:"";position:absolute;width:66%;height:82%;bottom:2%;border:1px solid rgba(0,230,255,.45);border-radius:48% 48% 18% 18%;box-shadow:0 0 60px rgba(0,220,255,.13) inset}
+.photo{position:relative;z-index:2;width:96%;height:100%;object-fit:contain;object-position:center bottom;filter:contrast(1.06) saturate(.95);mix-blend-mode:normal}
+.data-stamp{position:absolute;right:0;top:15%;z-index:5;color:#fff;font:italic 28px Georgia;transform:rotate(-6deg)}
+.data-stamp b{color:var(--orange);font-weight:400}.scrollhint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;color:#66717d;text-transform:uppercase}
+.section{min-height:auto}.section:before{content:"";position:absolute;inset:0;z-index:-2;background:var(--section-bg,linear-gradient(180deg,#02070c,#07131c));transition:background 1s}
+.section:after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at var(--mx) var(--my),var(--glow,rgba(0,220,255,.12)),transparent 34%);transition:background .8s}
+.about{--section-bg:linear-gradient(145deg,#03131b,#061019 55%,#09101b);--glow:rgba(0,225,255,.15)}
+.skills{--section-bg:linear-gradient(145deg,#060819,#0a0918 55%,#080e19);--glow:rgba(139,92,246,.16)}
+.experience{--section-bg:linear-gradient(145deg,#0b0905,#071018 58%,#0b0805);--glow:rgba(255,159,28,.15)}
+.projects{--section-bg:linear-gradient(145deg,#040d13,#08071a 55%,#061117);--glow:rgba(0,225,255,.12)}
+.contact{--section-bg:linear-gradient(145deg,#050b10,#10070b);--glow:rgba(255,90,110,.12)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:55px}
+.eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#7f8c98}
+.title{font:500 clamp(42px,5vw,68px)/.95 "Space Grotesk";letter-spacing:-.055em;margin-top:12px}
+.copy{max-width:440px;color:#8996a3;font-size:13px;line-height:1.8}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+.bigtext{font:500 clamp(34px,4vw,55px)/1.03 "Space Grotesk";letter-spacing:-.045em}.bigtext span{color:var(--cyan)}
+.about p{color:#99a5b1;line-height:1.85;font-size:14px;max-width:680px}
+.traits{display:grid;gap:12px}.trait{padding:18px;border:1px solid var(--line);border-radius:16px;background:#ffffff04;display:flex;gap:15px;align-items:center}
+.icon{width:38px;height:38px;border:1px solid #00dff655;border-radius:12px;display:grid;place-items:center;color:var(--cyan)}
+.trait strong{font:500 15px "Space Grotesk";display:block}.trait small{color:#697783}
+.statbar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:32px}.stat{border-top:1px solid var(--line);padding-top:17px}.stat b{font:600 28px "Space Grotesk"}.stat span{display:block;color:#707d89;font-size:9px;text-transform:uppercase;letter-spacing:.13em;margin-top:4px}
+.skillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skillcard{padding:25px;border:1px solid var(--line);border-radius:18px;background:#ffffff04;transition:.4s}.skillcard:hover{transform:translateY(-7px);border-color:#00dff655;background:#ffffff08}.skillcard h3{font:500 18px "Space Grotesk";margin:0 0 9px}.skillcard p{color:#7e8b97;font-size:12px;line-height:1.7;margin:0}
+.timeline{border-top:1px solid var(--line)}.timeline-item{display:grid;grid-template-columns:190px 1fr;gap:35px;padding:32px 0;border-bottom:1px solid var(--line)}
+.time{color:#707c88;font-size:10px;letter-spacing:.12em}.timeline-item h3{font:500 25px "Space Grotesk";margin:0}.timeline-item h4{color:var(--cyan);font-size:12px;margin:7px 0 14px}.timeline-item p,.timeline-item li{color:#8d9aa6;font-size:13px;line-height:1.7}.timeline-item ul{padding-left:18px}
+.projectgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{min-height:340px;padding:30px;border:1px solid var(--line);border-radius:22px;position:relative;overflow:hidden;background:#ffffff04;transition:.5s}.project:before{content:"";position:absolute;inset:auto -15% -55% -15%;height:65%;background:radial-gradient(circle,rgba(0,225,255,.18),transparent 60%);filter:blur(20px)}.project:nth-child(2):before{background:radial-gradient(circle,rgba(255,159,28,.16),transparent 60%)}.project:hover{transform:translateY(-8px) scale(1.01);border-color:#ffffff35}.project-no{font-size:10px;color:#687582;letter-spacing:.2em}.project h3{font:500 31px "Space Grotesk";margin:75px 0 12px}.project p{color:#8c99a6;font-size:13px;line-height:1.8;position:relative;z-index:2}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:24px;position:relative;z-index:2}.tag{padding:7px 10px;border:1px solid var(--line);border-radius:99px;font-size:9px;color:#a9b4bf;text-transform:uppercase;letter-spacing:.1em}
+.contactbox{text-align:center;padding:110px 0}.contactbox .title{font-size:clamp(55px,9vw,110px)}.contactbox p{color:#8996a2;max-width:500px;margin:25px auto;line-height:1.8}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#606c77;font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+@keyframes pulse{50%{transform:scale(1.05);opacity:.8}}
+@media(max-width:850px){
+ .links{display:none}.hero{padding-top:100px}.hero-content,.about-grid{grid-template-columns:1fr}.hero-photo{height:540px;order:-1}.hero-content{gap:0}.data-stamp{right:8%}
+ .section-head{display:block}.copy{margin-top:18px}.skillgrid,.projectgrid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:10px}.stats{grid-template-columns:1fr 1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav class="nav"><div class="container nav-inner">
+  <a class="logo" href="#home">M<span>R</span></a>
+  <div class="links"><a href="#home" class="active">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+  <a class="cv" href="Mohammed_Rahim_Resume.pdf" target="_blank">↓ Download CV</a>
+</div></nav>
+
+<main>
+<section id="home" class="hero" data-color="cyan">
+ <div class="grid-bg"></div><div class="bg-orb orb1"></div><div class="bg-orb orb2"></div><div class="bg-orb orb3"></div>
+ <div class="container hero-content">
+  <div class="reveal">
+   <div class="kicker">HELLO, I'M</div>
+   <h1>Mohammed<br><span class="orange">Rahim</span></h1>
+   <div class="role">Python Developer</div>
+   <p class="lead">Turning data into insights | Building intelligent solutions | Passionate about Python, Data Science and a better tomorrow.</p>
+   <div class="contact-mini"><span>☎ +91-9597404169</span><span>✉ mohammedrahim625002@gmail.com</span><span>in linkedin.com/in/mohammed-rahim-s-1b75292b4</span></div>
+   <div class="actions"><a class="btn primary" href="#projects">View My Work →</a><a class="btn" href="#contact">Contact Me</a></div>
+  </div>
+  <div class="hero-photo reveal">
+   <div class="photo-halo"></div><div class="photo-frame"><img class="photo" src="portrait.png" alt="Mohammed Rahim"></div>
+   <div class="data-stamp">Data<br>Drives <b>Decisions</b></div>
+  </div>
+ </div>
+ <div class="scrollhint">Scroll down ↓</div>
+</section>
+
+<section id="about" class="section about" data-color="cyan"><div class="container">
+ <div class="section-head reveal"><div><div class="eyebrow">01 / About me</div><div class="title">Python Developer &amp;<br><span style="color:var(--cyan)">Aspiring Data Scientist</span></div></div><div class="copy">A motivated, detail-oriented builder who enjoys transforming raw data into useful insights, predictive models and practical software.</div></div>
+ <div class="about-grid">
+  <div class="reveal"><div class="bigtext">Curiosity becomes <span>code.</span><br>Code becomes <span>insight.</span></div><p>Strong foundations in Python, data analysis, machine learning and statistical modeling. Skilled in handling datasets, building predictive models and creating data-driven visualizations.</p><p>Quick learner with a problem-solving mindset, eager to apply analytical and programming skills to real-world challenges.</p>
+   <div class="statbar"><div class="stat"><b>25K+</b><span>Records analyzed</span></div><div class="stat"><b>10+</b><span>Dynamic KPIs</span></div><div class="stat"><b>3</b><span>Core projects</span></div></div>
+  </div>
+  <div class="traits reveal">
+   <div class="trait"><div class="icon">⌘</div><div><strong>Python Developer</strong><small>Coding · Analysis · Innovation</small></div></div>
+   <div class="trait"><div class="icon">◫</div><div><strong>Data Analyst</strong><small>EDA · Visualization · Insights</small></div></div>
+   <div class="trait"><div class="icon">✦</div><div><strong>Machine Learning</strong><small>Predict · Optimize · Build</small></div></div>
+   <div class="trait"><div class="icon">◎</div><div><strong>Problem Solver</strong><small>Think · Analyze · Create</small></div></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="skills" class="section skills" data-color="purple"><div class="container">
+ <div class="section-head reveal"><div><div class="eyebrow">02 / Technical skills</div><div class="title">The tools behind<br>the work.</div></div><div class="copy">A practical stack for analysis, development, querying, visualization and experimentation.</div></div>
+ <div class="skillgrid">
+  <div class="skillcard reveal"><h3>Programming</h3><p>Python, SQL</p></div>
+  <div class="skillcard reveal"><h3>Python Libraries</h3><p>Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn</p></div>
+  <div class="skillcard reveal"><h3>Databases &amp; Querying</h3><p>Oracle SQL, SQL Joins, Data Extraction, Query Optimization</p></div>
+  <div class="skillcard reveal"><h3>Business Intelligence</h3><p>Power BI, DAX, Excel, interactive dashboards</p></div>
+  <div class="skillcard reveal"><h3>Web Technologies</h3><p>HTML, CSS</p></div>
+  <div class="skillcard reveal"><h3>Tools &amp; Environments</h3><p>VS Code, Jupyter Notebook, Microsoft Word, PowerPoint</p></div>
+ </div>
+</div></section>
+
+<section id="experience" class="section experience" data-color="orange"><div class="container">
+ <div class="section-head reveal"><div><div class="eyebrow">03 / Experience &amp; education</div><div class="title">Where I've<br>learned.</div></div></div>
+ <div class="timeline">
+  <div class="timeline-item reveal"><div class="time">JUNE 2025 — PRESENT</div><div><h3>Data Analyst Intern</h3><h4>QSpiders · Bangalore</h4><ul><li>Extracted, transformed and cleaned sales data from 3 relational tables covering 25,000+ records across 12 months and 5 regions.</li><li>Performed EDA to uncover regional sales trends, product performance and return patterns.</li><li>Developed 10+ dynamic KPIs and business metrics using DAX in Power BI.</li><li>Designed interactive multi-page Power BI dashboards with slicers, filters and drill-downs.</li></ul></div></div>
+  <div class="timeline-item reveal"><div class="time">EXPECTED GRADUATION · 2025</div><div><h3>Bachelor of Commerce with Computer Application</h3><h4>M.S.S WAKF BOARD COLLEGE · Madurai, Tamil Nadu</h4><p>CGPA: <strong>6.47 / 10</strong></p></div></div>
+  <div class="timeline-item reveal"><div class="time">EXPECTED GRADUATION · PURSUING</div><div><h3>Master of Commerce with Computer Application</h3><h4>M.S.S WAKF BOARD COLLEGE · Madurai, Tamil Nadu</h4><p>CGPA: <strong>-- / 10</strong></p></div></div>
+ </div>
+</div></section>
+
+<section id="projects" class="section projects" data-color="cyan"><div class="container">
+ <div class="section-head reveal"><div><div class="eyebrow">04 / Selected projects</div><div class="title">Built to solve<br>real problems.</div></div><div class="copy">Projects combining software engineering, analytics and machine learning.</div></div>
+ <div class="projectgrid">
+  <article class="project reveal"><div class="project-no">PROJECT 01 / ML · AI</div><h3>Hotel Management<br>System</h3><p>ML-driven system for room allocation, booking prediction and customer preference analysis. Includes demand forecasting, pricing optimization and interactive insight visualization.</p><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span></div></article>
+  <article class="project reveal"><div class="project-no">PROJECT 02 / PYTHON</div><h3>Airline Reservation<br>System</h3><p>Python system centralizing booking and customer reservation data with efficient storage and retrieval, streamlined workflows and automated booking tasks.</p><div class="tags"><span class="tag">Python</span><span class="tag">Automation</span><span class="tag">Data</span></div></article>
+ </div>
+</div></section>
+
+<section id="contact" class="section contact"><div class="container contactbox reveal">
+ <div class="eyebrow">05 / What's next?</div><div class="title">Let's build<br><span style="color:var(--orange)">something.</span></div>
+ <p>Open to opportunities where Python, analytics and machine learning can solve meaningful problems.</p>
+ <div class="actions" style="justify-content:center"><a class="btn primary" href="mailto:mohammedrahim625002@gmail.com">Let's Connect →</a><a class="btn" href="https://www.linkedin.com/in/mohammed-rahim-s-1b75292b4" target="_blank">LinkedIn ↗</a></div>
+</div></section>
+</main>
+<footer><div class="container" style="display:flex;justify-content:space-between"><span>Mohammed Rahim</span><span>Python · Data · Machine Learning · © 2025</span></div></footer>
+
+<script>
+const root=document.documentElement, progress=document.getElementById('progress');
+const sections=[...document.querySelectorAll('section')], nav=[...document.querySelectorAll('.links a')];
+const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>reveal.observe(x));
+
+function update(){
+ const y=scrollY, max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max?y/max:0})`;
+ root.style.setProperty('--scroll',max?y/max:0);
+ const x=innerWidth*.5 + Math.sin(y*.003)*innerWidth*.18;
+ root.style.setProperty('--mx',x+'px');
+ root.style.setProperty('--my',(innerHeight*.25 + (y%innerHeight)*.12)+'px');
+ const cy=y+innerHeight*.35;
+ let active=sections[0];
+ sections.forEach(s=>{if(s.offsetTop<=cy)active=s});
+ nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+active.id));
+}
+addEventListener('scroll',update,{passive:true}); addEventListener('resize',update); update();
+</script>
+</body>
+</html>
